@@ -5,11 +5,11 @@ from TC_PIM_01.AddUser import AddUser
 from TC_PIM_02.EditUser import EditUser
 from TC_PIM_03.DeleteUser import DeleteUser
 
-def test_start():
+def test_start():           # Browser Starts
     assert StartStop().start() == True
     print("automation Started")
 
-
+#----------------- TC_LOGIN_01 --------------------
 
 def test_login():
     assert LoginTest().login() == True
@@ -19,20 +19,25 @@ def test_logout():
     assert LoginTest().logout() == True
     print("TC_LOGIN_01 POSITIVE :User Logged Out Successfully")
 
-
+#------------------ TC_LOGIN_02 --------------------
 
 def test_negative_login():
     assert NegativeLoginTest().negative_login() == True
     print("TC_LOGIN_02 NEGATIVE : The Invalid error Message is Displayed")
 
+#------------------ TC_PIM_01 -----------------------
 
 def test_add_user():
     assert AddUser().add_user() == "Successfully Saved"
     print("TC_PIM_01 POSITIVE : The User Should be able to ADD an new employee in the PIM")
 
+#------------------ TC_PIM_02 -----------------------
+
 def test_edit_user ():
     assert EditUser().edit_user() == "Successfully Updated"
     print("TC_PIM_02 POSITIVE : The User Should be able to EDIT an Existing employee information in PIM")
+
+#------------------ TC_PIM_03 ------------------------
 
 def test_delete_user():
     assert DeleteUser().delete_user() == "Successfully Deleted"
